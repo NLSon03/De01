@@ -134,7 +134,7 @@ namespace GUI
                 DialogResult result = MessageBox.Show("Bạn có chắn chắn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if(result == DialogResult.Yes)
                 {
-                    sinhvienService.DeleteBySinhVien(sinhvien);
+                    sinhvienService.DeleteById(txtMaSV.Text);
                     MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ReloadData();
                 }

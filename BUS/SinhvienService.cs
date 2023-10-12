@@ -26,20 +26,21 @@ namespace BUS
             context.Sinhviens.AddOrUpdate(s);
             context.SaveChanges();
         }
-        public void DeleteById(string studentId)
+        /*public void DeleteById(string studentId)
         {
             StudentModel context = new StudentModel();
             Sinhvien student = FindById(studentId);
             context.Sinhviens.Remove(student);
             context.SaveChanges();
-        }
+        }*/
 
-        public void DeleteBySinhVien(Sinhvien student)
+        public void DeleteById(string id)
         {
-            using (StudentModel context = new StudentModel())
+            using (StudentModel e = new StudentModel())
             {
-                context.Sinhviens.Remove(student);
-                context.SaveChanges();
+                var students =  e.Sinhviens.FirstOrDefault(p => p.MaSV == id);
+                e.Sinhviens.Remove(students);
+                e.SaveChanges();
             } 
         }
     }

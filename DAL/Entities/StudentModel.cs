@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
@@ -31,6 +32,7 @@ namespace DAL.Entities
                 .Property(e => e.MaLop)
                 .IsFixedLength()
                 .IsUnicode(false);
+            
         }
     }
 }
